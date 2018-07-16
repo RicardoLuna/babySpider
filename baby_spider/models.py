@@ -20,3 +20,16 @@ class Spider(models.Model):
 
     def __str__(self):
         return self.author
+
+
+class Extract(models.Model):
+    
+    id = models.AutoField(primary_key=True)
+    author = models.ForeignKey('auth.User', on_delete=models.CASCADE)
+    campo2 = models.TextField(default=None)
+    campo3 = models.TextField(default=None)
+    campo4 = models.TextField(default=None)
+    campo5 = models.TextField(default=None)
+
+    def __str__(self):
+        return self.author
