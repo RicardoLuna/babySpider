@@ -1,0 +1,25 @@
+Como deve ser o json:
+{
+    metodo:'get ou post',
+    url:'url'
+    consulta:true ou false,
+    consulta_url:'url',
+    consulta_metodo:''
+    consulta_step2:'xpath',
+    campos = {
+        campo1:'xpath',
+        campo2:'xpath',
+        campo3:'xpath',
+        campo4:'xpath',
+        campo5:'xpath',
+    } 
+    usuario:'nome'
+    }
+
+metodo: Referende ao tipo da requisição que deve ser feita inicialmente;
+url: Url para requisição inicial;
+consulta: Booleano que indica se será feita uma consulta antes de aplicar a url;
+consulta_url: Url usada na consulta;
+consulta_url: Indica se será usado um get ou post para a operação;
+consulta_step2: Indica a xpath usada apos a aplicação da consulta;
+campos: Dicionario que deve armazenar os campos que serão extraidos da página.
