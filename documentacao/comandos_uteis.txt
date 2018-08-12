@@ -1,4 +1,5 @@
 python manage.py runserver -> roda o servidor local
+myvenv\Scripts\activate -> Ativa a virtual env 
 
 
 python manage.py makemigrations > migrar banco
