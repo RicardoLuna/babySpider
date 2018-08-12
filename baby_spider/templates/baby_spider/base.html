@@ -7,14 +7,6 @@
         <link rel="stylesheet" href="{% static 'css/spider_list.css' %}">
     </head>
     <body>
-        <h3>Projeto da disciplica PISD</h3>
-        <img src="https://i.imgur.com/kEKQxxw.jpg" height="333" width="500">
-        <p>It works!</p>
-        <div class="page-header">
-            <a href="{% url 'spider_new' %}" class="top-menu">
-                    Cadastre uma nova spider aqui!
-                <span class="glyphicon glyphicon-plus"></span></a>
-        </div>
         {% block content %}
         {% endblock %}
     </body>

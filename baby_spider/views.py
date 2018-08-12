@@ -1,16 +1,20 @@
 from django.shortcuts import render
 from .models import Spider, Extract
 from .forms import SpiderForm
+from django.shortcuts import redirect
 
 # Create your views here.
-def spider_list(request):
-    return render(request, 'baby_spider/spider_list.html', {})
+def home(request):
+    return render(request, 'baby_spider/home.html', {})
 
 
-def extract_list(request, name):
-    posts = Post.objects.filter(author=name)
-    return render(request, 'baby_spider/spider_list.html', {})
-
+def list_spider(request):
+    # if(request.POST.get('author') != None):
+    author = request.POST.get('author')
+    spiders = Spider.objects.filter(author=author)
+    return render(request, 'baby_spider/spider_list.html', {'spiders':spiders})
+    # else:
+    #     return redirect('home')
 
 def spider_new(request):
     if request.method == "POST":
@@ -18,7 +22,13 @@ def spider_new(request):
         if form.is_valid():
             spider = form.save(commit=False)
             spider.save()
-            return redirect('base', pk=post.pk)
+            return redirect('home')
     else:
         form = SpiderForm()
     return render(request, 'baby_spider/spider_edit.html', {'form': form})
+
+
+def detail(request):
+    return render(request, 'baby_spider/detail.html')
+    
+

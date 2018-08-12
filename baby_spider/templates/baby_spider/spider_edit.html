@@ -4,6 +4,8 @@
     <h1>Nova Spider</h1>
     <form method="POST" class="spider-form">{% csrf_token %}
         {{ form.as_p }}
+        <a href="{% url 'spider_new' %}" >
         <button type="submit" class="save btn btn-default">Save</button>
+    </a>
     </form>
 {% endblock %}
