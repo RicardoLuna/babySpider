@@ -1,0 +1,17 @@
+{% extends 'baby_spider/base.html' %}
+{% block content %}       
+    {% for extract in extracts %}
+        <div class="panel panel-default">
+            <div class="panel-heading">Extract object</div>
+            <div class="panel-body">
+            <p>User: {{ extract.author }}</p>
+            <p>Fonte: {{ extract.fonte }}</p>
+            <p>Campo 1: {{ extract.campo1 }}</p>
+            <p>Campo 2: {{ extract.campo2 }}</p>
+            <p>Campo 3: {{ extract.campo3 }}</p>
+            <p>Campo 4: {{ extract.campo4 }}</p>
+            <p>Campo 5: {{ extract.campo5 }}</p>
+            </div>
+        </div>
+    {% endfor %}
+{% endblock %}

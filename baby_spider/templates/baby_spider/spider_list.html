@@ -1,10 +1,12 @@
 {% extends 'baby_spider/base.html' %}
 {% block content %}       
     {% for spider in spiders %}
-        <div>
-            <p>User: {{ spider.author }}</p>
-                
-            <p>Url: {{ spider.url }}</p>
+        <div class="panel panel-default">
+            <div class="panel-heading">Spider object</div>
+            <div class="panel-body">
+                <p>User: {{ spider.author }}</p>
+                <p>Url: {{ spider.url }}</p>
+            </div>
         </div>
     {% endfor %}
 {% endblock %}

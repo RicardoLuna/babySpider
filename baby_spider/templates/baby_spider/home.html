@@ -2,32 +2,44 @@
 {% extends 'baby_spider/base.html' %}
 
 {% block content %}
-    <h3>Projeto da disciplica PISD</h3>
-        <img src="https://pre00.deviantart.net/0b3b/th/pre/i/2009/238/f/2/jumping_spider_just_hatched_by_macrojunkie.jpg" height="333" width="500">
-        <p>It works!</p>
-        <ul class="nav nav-pills">
-            <li>
-                <div class="page-header">
-                    <a href="{% url 'spider_new' %}" class="top-menu">
-                        Cadastre uma nova spider aqui!
-                    <span class="glyphicon glyphicon-plus"></span></a>
-                </div>
-            </li>
-            <li>
-                <div class="page-header">
-                    <a href="{% url 'detail' %}" class="top-menu">
-                        About!
-                    </a>
-                </div>
-            </li>
+<div class="center-block">
+<nav aria-label="...">
+        <ul class="pager">
+        <li role="presentation" class="active">    
+            <a href="{% url 'detail' %}" class="top-menu">
+                Sobre
+            </a>
+        </li>
 
-        <div>
-            <form method="POST" action="list_spider">
-                {% csrf_token %}
-                <input type="text" name="author">
-                    
-                <button type="submit">Buscar autor</button>
-            </form>
-        </div>
+        <li role="presentation" class="active">
+            <a href="{% url 'spider_new' %}" class="top-menu">
+                Cadastre uma nova spider aqui!
+            </a>
+        </li>
     </ul>
+</nav>
+
+    <div>
+        <form method="POST" action="list_spider" class="navbar-form navbar-left" role="search">
+            <div class="form-group">
+            {% csrf_token %}
+                <input type="text" name="author" class="form-control" placeholder="Digite aqui">
+                <button type="submit" class="btn btn-default">Buscar autor</button>
+            </div>
+        </form>
+    </div>
+
+    <div>
+        <form method="POST" action="list_extract" class="navbar-form navbar-left" role="search">
+            <div class="form-group">
+            {% csrf_token %}
+                <input type="text" name="author" class="form-control" placeholder="Digite aqui">
+                <button type="submit" class="btn btn-default">Buscar extração</button>
+            </div>        
+        </form>
+    </div>
+
+
+</div>
+
 {% endblock %}
